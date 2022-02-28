@@ -1,9 +1,9 @@
 
 interface ISearchResult {
-    id: number;
-    userId?: number;
-    title: string;
-    body: string;
+    searchType: string;
+    expression: string;
+    results: ISearchResult[];
+    errorMessage?: string;
 }
 
 export default ISearchResult

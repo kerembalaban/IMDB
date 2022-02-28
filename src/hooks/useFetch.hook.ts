@@ -1,5 +1,5 @@
 
-import React, { FC, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import ISearchData from "../interfaces/searchData"
 
 const useFetch = <T>(url: string) => {
