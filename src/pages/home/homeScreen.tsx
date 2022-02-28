@@ -1,10 +1,11 @@
 
 import React, { FC } from 'react'
+import { Text } from 'react-native'
 import styles from './homeScreen-style'
 
 const HomeScreen: FC = () => {
     return(
-        null
+        <Text>Home Screen</Text>
     )
 }
 

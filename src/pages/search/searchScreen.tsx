@@ -1,10 +1,11 @@
 
 import React, { FC } from 'react'
+import { Text } from 'react-native'
 import styles from './searchScreen-style'
 
 const SearchScreen: FC = () => {
-    return(
-        null
+    return (
+        <Text>Search Screen</Text>
     )
 }
 

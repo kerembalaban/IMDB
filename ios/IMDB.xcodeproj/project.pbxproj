@@ -14,6 +14,7 @@
 		28F3587E3A98762DCCDDA8E0 /* libPods-IMDB-IMDBTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ADA4A58A20F280E6290FB4A /* libPods-IMDB-IMDBTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A068D455611FFE7FB8E8F90C /* libPods-IMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5808BB092F4F02490A24B700 /* libPods-IMDB.a */; };
+		F024DEAB27CD48FE00F24D3A /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F024DEAA27CD48FE00F24D3A /* BootSplash.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		BDDF40776DB6B8ED9FAA7222 /* Pods-IMDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMDB.debug.xcconfig"; path = "Target Support Files/Pods-IMDB/Pods-IMDB.debug.xcconfig"; sourceTree = "<group>"; };
 		E65B5D29184C326FF4BFEC0C /* Pods-IMDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMDB.release.xcconfig"; path = "Target Support Files/Pods-IMDB/Pods-IMDB.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F024DEAA27CD48FE00F24D3A /* BootSplash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BootSplash.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				F024DEAA27CD48FE00F24D3A /* BootSplash.storyboard */,
 			);
 			name = IMDB;
 			sourceTree = "<group>";
@@ -145,7 +148,6 @@
 				294AC5C12D8435525EDFC368 /* Pods-IMDB-IMDBTests.debug.xcconfig */,
 				ACF944DF000A95A546DD76B6 /* Pods-IMDB-IMDBTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -244,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				F024DEAB27CD48FE00F24D3A /* BootSplash.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -5,13 +5,19 @@
  * @format
  * @flow strict-local
  */
-import { FC } from 'react';
+
 import 'react-native-gesture-handler';
+import React, { FC } from 'react';
+import { NavigationContainer } from "@react-navigation/native";
+import RNBootSplash from "react-native-bootsplash";
+import BottomTabNavigator from './src/navigations/bottomTabNavigator';
 
 const App: FC = () => {
 
   return (
-    null
+    <NavigationContainer onReady={() => RNBootSplash.hide()}>
+      <BottomTabNavigator />
+    </NavigationContainer>
   );
 };
 
