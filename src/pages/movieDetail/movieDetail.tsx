@@ -72,6 +72,7 @@ const MovieDetailScreen: FC = () => {
                         <ImageComponent uri={data!.image} style={styles.moviePoster} />
                         <Text style={styles.description}>{data!.trailer.videoDescription}</Text>
                     </View>
+                    <Text style={styles.rating}>IMDb Rating: {data!.imDbRating} / 10</Text>
                     {/* Add/Remove Favorite Button */}
                     <TouchableOpacity style={styles.favoriteButton} onPress={handleOnFavoriteButton}>
                         <Text style={styles.favoriteButtonTitle}>{checkMovieInFavoriteList() ? "Remove From favorites" : "Add to favorites"}</Text>
