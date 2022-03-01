@@ -14,9 +14,8 @@ import styles from './searchScreen-style'
 
 const SearchScreen: FC = () => {
     const [query, setQuery] = useState<string>("")
-    const [data, setData] = useState<ISearchData|null>()
-    const [error, setError] = useState<string|null>()
-    const [loading, setLoading] = useState<boolean>(false)
+    const url = query.length > 4 ? `${BASE_API_URL}/${MOVIE_SEARCH_ENDPOINT}/${API_KEY}/${query}` : "";
+    const { data, error, loading } = useFetch<ISearchData>(url)
     const navigation = useNavigation()
     const { recents } = useContext(AppContext);
     const [focused, setFocused] = useState<boolean>(false)
@@ -29,28 +28,6 @@ const SearchScreen: FC = () => {
         Keyboard.dismiss()
     }
 
-    const searchData = () => {
-        const url = `${BASE_API_URL}/${MOVIE_SEARCH_ENDPOINT}/${API_KEY}/${query}`;
-        setLoading(true)
-        fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            if (data.errorMessage) {
-                setError(data.errorMessage)
-                setData(null)
-            } else {
-                setData(data)
-                setError(null)
-            }
-            setLoading(false)
-        })
-        .catch(error => {
-            setError(error)
-            setData(null)
-            setLoading(false)
-        })
-    }
-
     const handleOnSearchInputFocus = () => {
         setFocused(true)
     }
@@ -61,7 +38,6 @@ const SearchScreen: FC = () => {
 
     const handleOnCancel = () => {
         setQuery("")
-        setData(null)
         setFocused(false)
         dismissKeyboard()
     }
@@ -73,13 +49,12 @@ const SearchScreen: FC = () => {
                 overlayColor={'rgba(51, 49, 62, 0.95)'} />
             <SearchBar
                 value={query}
-                onSubmit={searchData}
                 onFocus={handleOnSearchInputFocus}
                 onChange={handleOnQueryChange}
                 onCancel={handleOnCancel} />
             {
                 error && focused ?
-                <ErrorView error={error} onPress={searchData} /> 
+                <ErrorView error={error} onPress={() => {}} /> 
                 : null
             }
             {

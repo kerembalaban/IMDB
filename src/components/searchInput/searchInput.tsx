@@ -5,13 +5,12 @@ import styles from "./searchInput-styles"
 
 type Props = {
     onFocus(): void,
-    onSubmit(): void,
     onCancel(): void,
     onChange(e: NativeSyntheticEvent<TextInputChangeEventData>): void,
     value: string
 };
 
-const SearchBar = ({ onFocus,onSubmit, onCancel, onChange, value }: Props) => {
+const SearchBar = ({ onFocus, onCancel, onChange, value }: Props) => {
     const [isFocued, setFocused] = useState<Boolean>(false)
 
     const handleOnSearchInputFocus = () => {
@@ -27,7 +26,6 @@ const SearchBar = ({ onFocus,onSubmit, onCancel, onChange, value }: Props) => {
     return (
         <View style={styles.container}>
             <TextInput
-                onSubmitEditing={onSubmit}
                 value={value}
                 onFocus={handleOnSearchInputFocus}
                 returnKeyType='search'
