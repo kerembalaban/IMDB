@@ -1,10 +1,11 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React, { FC } from "react";
-import { HomeScreen, SearchScreen } from '../pages'
+import HomeNavigator from "./homeStack";
+import SearchNavigator from "./searchStack";
 
 type BottomTabParams = {
-    Home: undefined;
-    Search: undefined;
+    HomeStack: undefined;
+    SearchStack: undefined;
 };
 
 const BottomTab = createBottomTabNavigator<BottomTabParams>()
@@ -12,8 +13,8 @@ const BottomTab = createBottomTabNavigator<BottomTabParams>()
 const BottomTabNavigator: FC = () => {
     return (
         <BottomTab.Navigator>
-            <BottomTab.Screen name="Home" component={HomeScreen} />
-            <BottomTab.Screen name="Search" component={SearchScreen} />
+            <BottomTab.Screen name="HomeStack" component={HomeNavigator} />
+            <BottomTab.Screen name="SearchStack" component={SearchNavigator} />
         </BottomTab.Navigator>
     )
 }

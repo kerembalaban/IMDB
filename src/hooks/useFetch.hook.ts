@@ -2,15 +2,22 @@
 import { useEffect, useState } from "react"
 import ISearchData from "../interfaces/searchData"
 
-const useFetch = <T>(url: string) => {
+const useFetch = <ISearchData>(url: string) => {
 
-    const [data, setData] = useState<ISearchData | null>(null)
+    const [data, setData] = useState<ISearchData | null>()
+    const [error, setError] = useState<string>("")
     const [loading, setLoading] = useState<boolean>(false)
 
     useEffect(() => {
+        if (!url || !url.trim()){
+            return;
+        }
         const searchData = async () => {
             const response = await fetch(url);
-            const data = await response.json()
+            const jsonResponse = await response.json()
+            if (jsonResponse.errorMessage){
+                console.log(jsonResponse.errorMessage)
+            }
             setData(data)
           };
 

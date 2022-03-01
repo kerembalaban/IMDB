@@ -11,13 +11,16 @@ import React, { FC } from 'react';
 import { NavigationContainer } from "@react-navigation/native";
 import RNBootSplash from "react-native-bootsplash";
 import BottomTabNavigator from './src/navigations/bottomTabNavigator';
+import AppProvider from './src/contexApi/appContext';
 
 const App: FC = () => {
 
   return (
-    <NavigationContainer onReady={() => RNBootSplash.hide()}>
-      <BottomTabNavigator />
-    </NavigationContainer>
+    <AppProvider>
+      <NavigationContainer onReady={() => RNBootSplash.hide()}>
+        <BottomTabNavigator />
+      </NavigationContainer>
+    </AppProvider>
   );
 };
 

@@ -1,11 +1,10 @@
-
+import ISearchResult from "./searchResult";
 
 interface ISearchData {
-    id: string;
-    resultType: string;
-    image: string;
-    title: string;
-    description: string
+    searchType: string;
+    expression: string;
+    results: ISearchResult[];
+    errorMessage?: string;
 }
 
 export default ISearchData
