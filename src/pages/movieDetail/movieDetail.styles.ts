@@ -53,6 +53,12 @@ const styles = StyleSheet.create({
         fontSize: 14,
         marginTop: 4
     },
+    rating: {
+        fontSize: 16,
+        fontWeight: '500',
+        marginTop: 4,
+        marginStart: 16
+    },
     favoriteButton: {
         backgroundColor: '#f3ce13',
         height:50,

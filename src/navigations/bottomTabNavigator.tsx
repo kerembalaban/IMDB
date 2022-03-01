@@ -15,8 +15,12 @@ const BottomTabNavigator: FC = () => {
         <BottomTab.Navigator screenOptions={{
             headerShown: false
         }}>
-            <BottomTab.Screen name="HomeStack" component={HomeNavigator} />
-            <BottomTab.Screen name="SearchStack" component={SearchNavigator} />
+            <BottomTab.Screen name="HomeStack" component={HomeNavigator} options={{
+                title: "My Favorites"
+            }}/>
+            <BottomTab.Screen name="SearchStack" component={SearchNavigator} options={{
+                title: "Search"
+            }}/>
         </BottomTab.Navigator>
     )
 }
