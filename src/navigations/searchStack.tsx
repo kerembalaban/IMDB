@@ -10,7 +10,8 @@ const SearchNavigator: FC = () => {
     return (
         <SearchStack.Navigator>
             <SearchStack.Screen name="Search" component={SearchScreen} />
-            <SearchStack.Screen name="MovieDetail" component={MovieDetailScreen} />
+            <SearchStack.Screen name="MovieDetail" component={MovieDetailScreen}
+                options={({ route }) => ({ title: route.params.movie.title })} />
         </SearchStack.Navigator>
     )
 }

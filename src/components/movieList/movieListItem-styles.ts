@@ -4,16 +4,16 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'row',
-        marginTop: 4
+        marginTop: 8
     },
     image: {
-        width: 60,
-        height: 100,
-        borderRadius: 4
+        width: 55,
+        height: 80,
+        borderRadius: 2
     },
     information: {
         flex: 1,
-        marginHorizontal: 16,
+        marginHorizontal: 8,
         marginTop: 16
     },
     title: {

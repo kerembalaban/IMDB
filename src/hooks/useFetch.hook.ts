@@ -1,36 +1,51 @@
 
+import { useNetInfo } from "@react-native-community/netinfo"
 import { useEffect, useState } from "react"
+import { Alert } from "react-native"
 
 const useFetch = <T>(url: string) => {
-
     const [data, setData] = useState<T | null>()
     const [error, setError] = useState<string | null>()
     const [loading, setLoading] = useState<boolean>(false)
+    const netInfo = useNetInfo()
 
     useEffect(() => {
         if (!url || !url.trim()) {
-            return;
+            setData(null)
+            setError(null)
+            return
         }
-        
-        const searchData = async () => {
-            setLoading(true)
-            const response = await fetch(url);
-            const data = await response.json()
-            if (data.errorMessage) {
-                setError(data.errorMessage)
+
+        if (!netInfo.isInternetReachable) {
+            setError('There is no internet connection, please check your internet')
+            setData(null)
+            return
+        }
+
+        const searchData = async () => { 
+            try {
+                setLoading(true)
+                const response = await fetch(url);
+                const data = await response.json()
+                if (data.errorMessage) {
+                    setError(data.errorMessage)
+                    setData(null)
+                } else {
+                    setData(data)
+                    setError(null)
+                }
+                setLoading(false)
+            } catch (err) {
+                setError("Unknown error occured")
                 setData(null)
-            } else {
-                setData(data)
-                setError(null)
+                setLoading(false)
             }
-            
-            setLoading(false)
         };
 
-        searchData();
+        searchData()
     }, [url])
 
-    return { data,error, loading }
+    return { data, error, loading }
 }
 
 export default useFetch

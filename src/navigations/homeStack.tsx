@@ -8,8 +8,11 @@ const HomeStack = createNativeStackNavigator<HomeStackParams>()
 const HomeNavigator: FC = () => {
     return (
         <HomeStack.Navigator>
-            <HomeStack.Screen name="Home" component={HomeScreen} />
-            <HomeStack.Screen name="MovieDetail" component={MovieDetailScreen} />
+            <HomeStack.Screen name="Home" component={HomeScreen} options={{
+                title: "My Favorites"
+            }}/>
+            <HomeStack.Screen name="MovieDetail" component={MovieDetailScreen}
+                options={({ route }) => ({ title: route.params.movie.title })} />
         </HomeStack.Navigator>
     )
 }

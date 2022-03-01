@@ -1,5 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React, { FC } from "react";
+import { MovieDetailScreen } from "../pages";
 import HomeNavigator from "./homeStack";
 import SearchNavigator from "./searchStack";
 

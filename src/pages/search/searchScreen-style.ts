@@ -2,24 +2,18 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     container: {
-        flex:1,
-        backgroundColor:'white'
-    },
-    flatListContainer: {
-        paddingHorizontal:16
+        flex: 1,
+        backgroundColor: 'white'
     },
     searchContainer: {
-        height:80,
-        marginHorizontal: 0,
-        backgroundColor:'white'
+        height: 80,
+        backgroundColor: 'white'
     },
-    searchInput: {
-        flex:1,
-        margin:16,
-        borderWidth:1,
-        borderColor:'#D3D3D3',
-        borderRadius:10,
-        paddingStart:16
+    recentTitle: {
+        marginStart: 16,
+        fontSize: 16,
+        marginTop: 8,
+        fontWeight: '500'
     }
 })
 

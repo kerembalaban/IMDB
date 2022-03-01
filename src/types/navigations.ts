@@ -1,12 +1,13 @@
+import ISearchResult from "../interfaces/searchResult";
 
 export type HomeStackParams = {
     Home: undefined;
-    MovieDetail: { id: string };
+    MovieDetail: { movie: ISearchResult };
 };
 
 export type SearchStackParams = {
     Search: undefined;
-    MovieDetail: { id: string };
+    MovieDetail: { movie: ISearchResult };
 };
 
 export interface RootStackParamList

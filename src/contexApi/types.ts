@@ -1,4 +1,3 @@
-import ISearchData from "../interfaces/searchData";
 import ISearchResult from "../interfaces/searchResult";
 
 export type AppContextState = {
