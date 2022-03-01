@@ -1,30 +1,36 @@
 
 import { useEffect, useState } from "react"
-import ISearchData from "../interfaces/searchData"
 
-const useFetch = <ISearchData>(url: string) => {
+const useFetch = <T>(url: string) => {
 
-    const [data, setData] = useState<ISearchData | null>()
-    const [error, setError] = useState<string>("")
+    const [data, setData] = useState<T | null>()
+    const [error, setError] = useState<string | null>()
     const [loading, setLoading] = useState<boolean>(false)
 
     useEffect(() => {
-        if (!url || !url.trim()){
+        if (!url || !url.trim()) {
             return;
         }
+        
         const searchData = async () => {
+            setLoading(true)
             const response = await fetch(url);
-            const jsonResponse = await response.json()
-            if (jsonResponse.errorMessage){
-                console.log(jsonResponse.errorMessage)
+            const data = await response.json()
+            if (data.errorMessage) {
+                setError(data.errorMessage)
+                setData(null)
+            } else {
+                setData(data)
+                setError(null)
             }
-            setData(data)
-          };
+            
+            setLoading(false)
+        };
 
-          searchData();
+        searchData();
     }, [url])
 
-    return { data, loading }
+    return { data,error, loading }
 }
 
 export default useFetch

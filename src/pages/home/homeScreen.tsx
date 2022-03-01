@@ -1,4 +1,6 @@
 
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackHeaderProps, NativeStackNavigationProp } from '@react-navigation/native-stack'
 import React, { FC, useContext } from 'react'
 import { FlatList, SafeAreaView, Text } from 'react-native'
 import { MovieListItem } from '../../components'
@@ -8,9 +10,10 @@ import styles from './homeScreen-style'
 
 const HomeScreen: FC = () => {
     const { favorites } = useContext(AppContext);
+    const navigation = useNavigation()
 
     const handleOnItemPress = (item: ISearchResult) => {
-        console.log(item)
+        navigation.navigate("MovieDetail", { id: item.id })
     }
 
     return (

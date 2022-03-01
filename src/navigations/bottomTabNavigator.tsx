@@ -9,10 +9,11 @@ type BottomTabParams = {
 };
 
 const BottomTab = createBottomTabNavigator<BottomTabParams>()
-
 const BottomTabNavigator: FC = () => {
     return (
-        <BottomTab.Navigator>
+        <BottomTab.Navigator screenOptions={{
+            headerShown: false
+        }}>
             <BottomTab.Screen name="HomeStack" component={HomeNavigator} />
             <BottomTab.Screen name="SearchStack" component={SearchNavigator} />
         </BottomTab.Navigator>

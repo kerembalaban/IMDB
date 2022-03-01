@@ -3,8 +3,13 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        flexDirection: 'row',
-        marginTop: 4
+        alignItems:'center',
+        justifyContent:'center'
+    },
+    error:{
+        paddingHorizontal:24,
+        fontSize:24,
+        fontWeight:'bold'
     },
     image: {
         width: 60,
